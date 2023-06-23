@@ -3,7 +3,7 @@ resource "aws_instance" "interview_app_server" {
   instance_type          = "t3.micro"
   vpc_security_group_ids = [aws_security_group.interview_security_group.id]
   subnet_id              = aws_subnet.interview_subnet.id
-  user_data              = file("initserver.tpl")
+  user_data              = file("templates/initserver.tpl")
   key_name               = aws_key_pair.interview_key_pair.id
   connection {
     type        = "ssh"
