@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Etwas zur Einkaufsliste hinzufuegen {% endblock %}</h1>
+    <form method="post">
+        <label for="title">Bezeichung (z. Bsp. Tomate)</label>
+        <br>
+        <input type="text" name="title"
+               placeholder="Bezeichnung (z. Bsp. Tomate)"
+               value="{{ request.form['title'] }}"></input>
+        <br>
+
+        <label for="content">Details (z. Bsp. 500 Gramm)</label>
+        <br>
+        <textarea name="content"
+                  placeholder="Details"
+                  rows="15"
+                  cols="60"
+                  >{{ request.form['content'] }}</textarea>
+        <br>
+        <button type="submit">Hinzufuegen</button>
+    </form>
+{% endblock %}
