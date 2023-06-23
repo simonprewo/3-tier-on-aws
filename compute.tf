@@ -8,7 +8,7 @@ resource "aws_instance" "interview_app_server" {
   connection {
     type        = "ssh"
     user        = "ec2-user"
-    private_key = file("key")
+    private_key = file("keys/key")
     host        = self.public_ip
   }
   provisioner "file" {
