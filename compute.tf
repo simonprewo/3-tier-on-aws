@@ -19,5 +19,5 @@ resource "aws_instance" "interview_app_server" {
 
 resource "aws_key_pair" "interview_key_pair" {
   key_name   = "interview_key_pair"
-  public_key = file("key.pub")
+  public_key = file("keys/key.pub")
 }
